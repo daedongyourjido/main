@@ -28,21 +28,27 @@ export default function LoginButton(props) {
                 props.setPwEmpty(false);
                 
             else {
-                axios.post('https://wtdhqxavjk.execute-api.us-east-2.amazonaws.com/auth/2023-h-capstone-auth', {
-                    id: props.id,
-                    password: props.pw
-                })
-                .then(res => {
-                    console.log('token:', res.data.token, "id:",res.data.id, "pw:", res.data.password, "name:", res.data.name);
-                    localStorage.setItem('token', res.data.token);
-                    localStorage.setItem('id', res.data.id);
-                    localStorage.setItem('pw', res.data.password);
-                    localStorage.setItem('name', res.data.name);
+                    localStorage.setItem('token', "1234");
+                    localStorage.setItem('id', "sjhong98@icloud.com");
+                    localStorage.setItem('pw', "mango");
+                    localStorage.setItem('name', "승재");
                     navigate('/');
-                })
-                .catch(error => {;
-                    console.log(error);
-                })
+
+                // axios.post('https://wtdhqxavjk.execute-api.us-east-2.amazonaws.com/auth/2023-h-capstone-auth', {
+                //     id: props.id,
+                //     password: props.pw
+                // })
+                // .then(res => {
+                //     console.log('token:', res.data.token, "id:",res.data.id, "pw:", res.data.password, "name:", res.data.name);
+                //     localStorage.setItem('token', res.data.token);
+                //     localStorage.setItem('id', res.data.id);
+                //     localStorage.setItem('pw', res.data.password);
+                //     localStorage.setItem('name', res.data.name);
+                //     navigate('/');
+                // })
+                // .catch(error => {;
+                //     console.log(error);
+                // })
 
       }}}>sign In</Button>
     </Stack>
